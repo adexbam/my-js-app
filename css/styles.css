@@ -11,3 +11,15 @@
         margin: 0 auto;
         background-color: #f4bf42;
     }
+
+    h1, h2, h3, h4 {
+        align-items: center;	    
+        color: blue;	    	    
+        margin: 0px;
+        padding: 0px;
+      }
+    
+      p {
+       color: black;
+       margin: 0px;
+     }
