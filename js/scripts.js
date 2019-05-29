@@ -1,3 +1,38 @@
+var pokemonRepository = (function () {
+    var repository = [
+        {name: 'Bulbasaur', height: 0.7, types: ['grass', 'poison'] },
+        {name: 'Charizard', height: 1.7, types: ['fire', 'flying'] },
+        {name: 'CharMetapod', height: 0.7, types: ['bug',] },
+        {name: 'Pidgey', height: 0.3, types: ['flying', 'normal'] }
+    ];
+
+    repository.forEach(function(pokemonList){
+        if (pokemonList.height >= 0.7) {
+            document.write(pokemonList.name + ' , height: '  + pokemonList.height  + ' - Wow, that’s big! ' + '<br>');
+    
+        } else {
+            document.write(pokemonList.name + ' , height: ' + pokemonList.height  + '<br>');
+        }
+      });
+
+    function add(pokemon) {
+        repository.push(pokemon);
+      }
+    
+      function getAll() {
+        return repository;
+      }
+    
+      return {
+        add: add,
+        getAll: getAll
+      };
+})();
+
+
+
+/* comment out old code for new IIFE code
+
 var repository = [ 
     {name: 'Bulbasaur', height: 0.7, types: ['grass', 'poison'] },
     {name: 'Charizard', height: 1.7, types: ['fire', 'flying'] },
@@ -14,7 +49,7 @@ repository.forEach(function(pokemonList){
     }
   });
 
-
+*/
   
 /*
 var repository2 = [ 
