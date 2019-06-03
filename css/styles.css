@@ -9,8 +9,16 @@
         line-height: 1.6;
         max-width: 700px;
         margin: 0 auto;
-        background-color: #f4bf42;
+        background-color: #C0C0C0;
     }
+
+    @media only screen and (max-width: 768px) {
+        /* For mobile phones: */
+        body 
+        {
+            margin: 0 20px;
+        }
+      }
 
     h1, h2, h3, h4 {
         align-items: center;	    
@@ -20,6 +28,77 @@
       }
     
       p {
-       color: black;
+       color: rgb(255, 255, 255);
        margin: 0px;
      }
+
+     .row::after {
+        content: "";
+        clear: both;
+        display: block;
+      }
+
+     header {
+        background-color: #363038;
+        color: #ffffff;
+        padding: 15px;
+      }
+
+     .header_button {
+        float: right;
+        padding: 6px 10px;
+        margin-top: 8px;
+        margin-right: 16px;
+        background: #ddd;
+        font-size: 17px;
+        border: none;
+        cursor: pointer;
+     }
+
+     .menu_pokolist ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+      }
+      
+      .menu_pokolist li {
+        padding: 8px;
+        margin-bottom: 7px;
+        background-color: #33b5e5;
+        color: #ffffff;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+      }
+      
+      .menu_pokolist li:hover {
+        background-color: #6dc8e9;
+      }
+
+      .col_1 {
+          width: 100%;
+        }
+
+     @media only screen and (max-width: 768px) {
+        /* For mobile phones: */
+        [class*="col-"] {
+          width: 100%;
+        }
+      }
+
+      .poko_item {
+        font-family: inherit;
+        font-size: 20px;
+        text-decoration: none;
+        padding: 0;
+        border: none;
+        background: none;
+        cursor:pointer;
+      }
+
+
+      footer {
+        background-color: #363038;
+        color: #ffffff;
+        text-align: center;
+        font-size: 12px;
+        padding: 15px;
+      }

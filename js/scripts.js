@@ -1,77 +1,55 @@
-var pokemonRepository = (function () {
-    var repository = [
-        {name: 'Bulbasaur', height: 0.7, types: ['grass', 'poison'] },
-        {name: 'Charizard', height: 1.7, types: ['fire', 'flying'] },
-        {name: 'CharMetapod', height: 0.7, types: ['bug',] },
-        {name: 'Pidgey', height: 0.3, types: ['flying', 'normal'] }
-    ];
+var pokemonRepository = (function () {     //IIFE starts here
 
-    function add(pokemon) {
-        repository.push(pokemon);
-      }
-    
-      function getAll() {
-        return repository;
-      }
-    
-      return {
-        add: add,
-        getAll: getAll
-      };
-})();
+  var $repository = [
+      {name: 'Bulbasaur', height: 0.7, types: ['grass', 'poison'] },
+      {name: 'Charizard', height: 1.7, types: ['fire', 'flying'] },
+      {name: 'CharMetapod', height: 0.7, types: ['bug',] },
+      {name: 'Pidgey', height: 0.3, types: ['flying', 'normal'] }
+  ];
 
-pokemonRepository.getAll().forEach(function(pokemonList){
-    if (pokemonList.height >= 0.7) {
-        document.write(pokemonList.name + ' , height: '  + pokemonList.height  + ' - Wow, that’s big! ' + '<br>');
+  function addListItem(pokoObject) {
+    //build the appropriate DOM nodes with document.createElement
+    var $boxlist = document.querySelector('.pokobox');
+    var $newElement = document.createElement('li');
+    var $newElementButton = document.createElement('button');
+    var $newContent = document.createTextNode('');
+    var $newContentTwo = document.createTextNode('pokomonName'); // add pokomon name as button 
 
-    } else {
-        document.write(pokemonList.name + ' , height: ' + pokemonList.height  + '<br>');
+    //add the necessary classes
+    $newElementButton.classList.add('poko_item');
+
+    //append button to the list item
+    $newElement.appendChild($newContent);
+    $newElementButton.appendChild($newContentTwo);
+    $boxlist.appendChild($newElement);
+    $newElement.appendChild($newElementButton);
+  };
+
+  addListItem();
+
+  function add(pokemon) {
+    $repository.push(pokemon);
     }
-  });
-
-
-/* comment out old code for new IIFE code
-
-var repository = [ 
-    {name: 'Bulbasaur', height: 0.7, types: ['grass', 'poison'] },
-    {name: 'Charizard', height: 1.7, types: ['fire', 'flying'] },
-    {name: 'CharMetapod', height: 0.7, types: ['bug',] },
-    {name: 'Pidgey', height: 0.3, types: ['flying', 'normal'] }
-];
-
-repository.forEach(function(pokemonList){
-    if (pokemonList.height >= 0.7) {
-        document.write(pokemonList.name + ' , height: '  + pokemonList.height  + ' - Wow, that’s big! ' + '<br>');
-
-    } else {
-        document.write(pokemonList.name + ' , height: ' + pokemonList.height  + '<br>');
-    }
-  });
-
-*/
   
-/*
-var repository2 = [ 
-    {name: 'Ivysaur', height: 1.0, types: ['grass', 'poison'] },
-    {name: 'Squirtle', height: 0.5, types: ['water',] },
-    {name: 'Butterfree', height: 1.1, types: ['bug', 'flying'] },
-    {name: 'Pidgeotto', height: 1.1, types: ['flying', 'normal'] }
-];
-
-function printArrayDetails(pokemonList){
-    document.write('<h2>Pokemon List</h2>');
- for (var i=0; i < pokemonList.length; i++) {
-    if (pokemonList[i].height >= 0.7) {
-        document.write(pokemonList[i].name + ' , height: '  + pokemonList[i].height  + ' - Wow, that’s big! ' + '<br>');
-
-    } else {
-        document.write(pokemonList[i].name + ' , height: ' + pokemonList[i].height  + '<br>');
+    function getAll() {
+      return $repository;
     }
-}
-    
-}
+  
+    return {
+      add: add,
+      getAll: getAll
+    };
 
-printArrayDetails(repository);
-printArrayDetails(repository2);
+})();  //IIFE Ends here
 
-*/
+
+/*
+  pokemonRepository.getAll().forEach(function(pokemonList){
+    if (pokemonList.height >= 0.7) {
+         document.write(pokemonList.name + ' , height: '  + pokemonList.height  + ' - Wow, that’s big! ' + '<br>');
+  
+    } else {
+         document.write(pokemonList.name + ' , height: ' + pokemonList.height  + '<br>');
+    }
+  }); 
+ */
