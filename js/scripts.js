@@ -31,8 +31,8 @@ var pokemonRepository = (function () {     //IIFE starts here
       $newElement.appendChild($newElementButton);
 
       //show-details event listner function
-      $newContentTwo.addEventListener('click', function(event) {       
-        showDetails(pokoObject);
+      $newElementButton.addEventListener('click', function(event){
+        showDetails(pokemon);
         });
     };
 
