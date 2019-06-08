@@ -22,13 +22,13 @@
 
     h1, h2, h3, h4 {
         align-items: center;	    
-        color: blue;	    	    
+        color: rgba(38, 0, 255, 0.808);	    	    
         margin: 0px;
         padding: 0px;
       }
     
       p {
-       color: rgb(255, 255, 255);
+       color: rgba(12, 129, 238, 0.993);
        margin: 0px;
      }
 
@@ -39,7 +39,7 @@
       }
 
      header {
-        background-color: #363038;
+        background-color: #38343b;
         color: #ffffff;
         padding: 15px;
       }
@@ -129,16 +129,7 @@
         max-width: 700px;
         text-align: left;
       }
-      
-      .modal-close {
-        float: right;
-        -webkit-appearance: none;
-        border: 0;
-        background: none;
-        color: #777;
-        text-decoration: underline;
-      }
-      
+
       .modal h1 {
         margin-top: 0;
       }
@@ -151,8 +142,30 @@
         display: block;
         margin-left: auto;
         margin-right: auto;
-        width: 50%;
+        width: 30%;
         height: auto;
+      }
+      
+      .modal-close {
+        float: right;
+        -webkit-appearance: none;
+        border: 0;
+        background-color: red;
+        color: #FFF;
+        text-decoration: none;
+        text-transform: uppercase;
+      }
+
+      .modal-close:hover {
+        background-color: #555;
+      }
+      
+      .modal-close:active {
+        background-color: black;
+      }
+      
+      .modal-close:visited {
+        background-color: #ccc;
       }
 
       footer {
