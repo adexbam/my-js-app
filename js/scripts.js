@@ -8,11 +8,12 @@ var pokemonRepository = (function () {     //IIFE starts here
       {name: 'Pidgey', height: 0.3, types: ['flying', 'normal'] }
       */
 
-    function showDetails(item) {
-    pokemonRepository.loadDetails(item).then(function () {
-      console.log(item);   });
+    async function showDetails(item) {
+      await pokemonRepository.loadDetails(item).then(function () {
+      console.log(item); });
       showModal(item);
-  }
+    }
+
 
     function addListItem(pokemon) {
       //build the appropriate DOM nodes with document.createElement
