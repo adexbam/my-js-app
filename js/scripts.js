@@ -8,8 +8,9 @@ var pokemonRepository = (function () {     //IIFE starts here
       {name: 'Pidgey', height: 0.3, types: ['flying', 'normal'] }
       */
 
-    async function showDetails(item) {
-      await pokemonRepository.loadDetails(item).then(function () {
+    //delay to load in the modal;fix that with async/await to wait for all data to load from response
+    async function showDetails(item) {                              
+      await pokemonRepository.loadDetails(item).then(function () { 
       console.log(item); });
       showModal(item);
     }
